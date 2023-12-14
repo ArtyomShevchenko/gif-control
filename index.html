@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .image-css {
+            width: 300px;
+            height: 400px;
+            background-position: center;
+            background-size: cover;
+            background-image: url("./assets/iron-man.png");
+        }
+
+        .image-css:hover {
+            background-image: url("./assets/iron-man.gif");
+        }
+    </style>
+</head>
+
+<body>
+    <div class="root">
+        <!-- this on css -->
+        <div class="image-css"></div>
+
+        <!-- this on js -->
+        <img id="img" class="image-js" src="./assets/iron-man.png" data-src="./assets/iron-man.gif" alt="Static Image">
+    </div>
+
+    <script>
+        const img = document.getElementById("img")
+
+        img.addEventListener("mouseover", () => {
+            img.src = String(img.src).replace(".png", ".gif")
+        })
+
+        img.addEventListener("mouseleave", () => {
+            img.src = String(img.src).replace(".gif", ".png")
+        })
+    </script>
+</body>
+
+</html>
